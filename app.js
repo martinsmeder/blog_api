@@ -22,5 +22,7 @@ app.use(express.json());
 app.use("/", routes.home); // home page
 app.use("/", routes.post); // found on /posts
 app.use("/", routes.comment); // found on /posts/postId/comments
+app.use("/", routes.signup); // found on /signup
+app.use("/", routes.login); // found on /login
 
 app.listen(3000, () => console.log("App listening on port 3000!"));
