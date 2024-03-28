@@ -9,7 +9,7 @@ router.get("/posts", async (req, res) => {
     res.json(posts);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -23,7 +23,7 @@ router.get("/posts/:id", async (req, res) => {
     res.json(post);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -40,7 +40,7 @@ router.post("/posts", async (req, res) => {
     res.json(savedPost);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -63,7 +63,7 @@ router.put("/posts/:id", async (req, res) => {
     res.json(updatedPost);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -77,7 +77,7 @@ router.delete("/posts/:id", async (req, res) => {
     res.json({ message: "Post deleted successfully" });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 

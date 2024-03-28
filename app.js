@@ -15,7 +15,11 @@ async function main() {
   await mongoose.connect(mongoDB);
 }
 
+// Parse JSON bodies
+app.use(express.json());
+
 // Initialize routes
+app.use("/", routes.home); // home page
 app.use("/", routes.post); // found on /posts
 app.use("/", routes.comment); // found on /posts/postId/comments
 

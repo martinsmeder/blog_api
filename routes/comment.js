@@ -9,7 +9,7 @@ router.get("/posts/:id/comments", async (req, res) => {
     res.json(comments);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -26,7 +26,7 @@ router.get("/posts/:postId/comments/:commentId", async (req, res) => {
     res.json(comment);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -41,7 +41,7 @@ router.post("/posts/:id/comments", async (req, res) => {
     res.json(savedComment);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -59,7 +59,7 @@ router.put("/posts/:postId/comments/:commentId", async (req, res) => {
     res.json(updatedComment);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
@@ -75,7 +75,7 @@ router.delete("/posts/:postId/comments/:commentId", async (req, res) => {
     res.json({ message: "Comment deleted successfully" });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: err.message });
   }
 });
 
